@@ -2,6 +2,12 @@
 
 A web-based job application tracking system built using **HTML, CSS, and TypeScript** to help job seekers organise applications, manage tasks, and keep track of follow-ups throughout their job search.
 
+## Live Demo
+
+🚀 [Try Job Tracker](https://shahanangit.github.io/job-tracker/)
+
+Explore the live application to view the dashboard and try its job application management features.
+
 ## Overview
 
 Job Tracker provides a centralised dashboard for organising job applications and related activities. It focuses on simplifying the job search process through structured application records, status tracking, and task management.
