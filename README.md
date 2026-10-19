@@ -4,7 +4,7 @@ A web-based job application tracking system built using **HTML, CSS, and TypeScr
 
 ## Live Demo
 
-🚀 [Try Job Tracker](https://shahanangit.github.io/job-tracker/)
+[Try Job Tracker](https://shahanangit.github.io/job-tracker/)
 
 Explore the live application to view the dashboard and try its job application management features.
 
