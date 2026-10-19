@@ -1,0 +1,26 @@
+# Installed dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor-specific settings
+.vscode/
+.idea/
+
+# TypeScript build information
+*.tsbuildinfo
+
+# TypeScript-generated files not needed for deployment
+*.d.ts
+*.d.ts.map
+*.js.map

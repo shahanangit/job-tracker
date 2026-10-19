@@ -1,0 +1,24 @@
+
+{
+  "name": "job-tracker",
+  "version": "1.0.0",
+  "description": "A web-based job application tracker built with HTML, CSS, and TypeScript to manage applications, tasks, and follow-up reminders.",
+  "main": "app.js",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [
+    "job-tracker",
+    "typescript",
+    "job-applications",
+    "frontend",
+    "task-management"
+  ],
+  "author": "Shahana Nalakath",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

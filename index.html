@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Job Tracker</h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Applications</a>
+                <a href="#">Weekly Goals</a>
+                <a href="#">Tasks</a>
+                <a href="#">Reminders</a>
+            </nav>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Track your job search progress</p>
+                </div>
+
+                <button class="add-job-btn">+ Add Job</button>
+            </header>
+
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Applications</h3>
+                    <p id="totalApplications">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Interviews</h3>
+                    <p id="totalInterviews">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Offers</h3>
+                    <p id="totalOffers">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Weekly Applications</h3>
+                    <p id="weeklyApplications">0</p>
+                </div>
+
+            </section>
+
+            <!-- Weekly Progress -->
+            <section class="weekly-progress">
+                <div class="progress-header">
+                    <div>
+                        <h2>Weekly Progress</h2>
+                        <p>Keep track of your goals for this week.</p>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>Applications</span>
+                        <span id="applicationProgress">0 / 5</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div
+                            class="progress-fill"
+                            id="applicationProgressBar">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-info">
+                        <span>Tasks Completed</span>
+                        <span id="taskProgress">0 / 0</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div
+                            class="progress-fill"
+                            id="taskProgressBar">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Job Applications -->
+            <section class="applications-section">
+
+                <div class="section-header">
+                    <h2>Recent Job Applications</h2>
+
+                    <select id="statusFilter">
+                        <option value="All">All Status</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search jobs...">
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Position</th>
+                            <th>Location</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="jobTableBody">
+                    </tbody>
+                </table>
+
+            </section>
+
+            <!-- Weekly Goals & Tasks -->
+            <section class="weekly-section">
+
+                <div class="weekly-header">
+
+                    <div>
+                        <h2>Weekly Goals & Tasks</h2>
+                        <p>Stay on track with your job search goals.</p>
+                    </div>
+                    <button id="addTaskBtn">+ Add Task</button>
+                </div>
+
+                <div class="task-sections">
+
+                    <div class="todo-section">
+                        <h3>To Do</h3>
+                        <div id="taskList"></div>
+                    </div>
+
+                    <div class="completed-section">
+                        <h3>Completed Tasks</h3>
+                        <div id="completedTaskList"></div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="reminders-section">
+
+                <div class="reminders-header">
+                    <div>
+                        <h2>Upcoming Reminders</h2>
+                        <p>Keep track of important follow-ups and upcoming actions.</p>
+                    </div>
+                    <button id="addReminderBtn">+ Add Reminder</button>
+                </div>
+
+                <div id="reminderList">
+                    <!-- Reminders will appear here -->
+                </div>
+            </section>
+            <div class="form-container" id="reminderFormContainer">
+                <div class="job-form">
+                    <h2>Add Reminder</h2>
+                    <form id="reminderForm">
+                        <label>Reminder</label>
+                        <input
+                            type="text"
+                            id="reminderTitle"
+                            placeholder="e.g. Update LinkedIn profile"
+                            required>
+                        <label>Date</label>
+                        <input
+                            type="date"
+                            id="generalReminderDate"
+                            required>
+
+                        <div class="form-buttons">
+                            <button type="submit">
+                                Save Reminder
+                            </button>
+                            <button type="button" id="cancelReminderBtn">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Add Task Form -->
+            <div class="form-container" id="taskFormContainer">
+
+                <div class="job-form">
+
+                    <h2>Add New Task</h2>
+
+                    <form id="taskForm">
+                        <label>Task</label>
+                        <input
+                            type="text"
+                            id="taskName"
+                            placeholder="e.g. Apply to 5 graduate roles"
+                            required>
+                        <div class="form-buttons">
+
+                            <button type="submit">
+                                Save Task
+                            </button>
+
+                            <button type="button" id="cancelTaskBtn">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Add Job Form -->
+            <div class="form-container" id="jobFormContainer">
+                <div class="job-form">
+                    <h2>Add Job Application</h2>
+
+                    <form id="jobForm">
+
+                        <label>Company</label>
+                        <input type="text" id="company" required>
+
+                        <label>Position</label>
+                        <input type="text" id="position" required>
+
+                        <label>Location</label>
+                        <input type="text" id="location" required>
+
+                        <label>Date Applied</label>
+                        <input type="date" id="dateApplied" required>
+
+                        <label>Status</label>
+                        <select id="status">
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+
+                        <!-- New fields for Next Action and Reminder Date -->
+                        <label>Next Action</label>
+                        <input
+                            type="text"
+                            id="nextAction"
+                            placeholder="e.g. Follow up, Interview, Application deadline">
+
+                        <label>Reminder Date</label>
+                        <input
+                            type="date"
+                            id="reminderDate">
+
+                        <div class="form-buttons">
+                            <button type="submit">Save Job</button>
+                            <button type="button" id="cancelBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
